@@ -1,0 +1,13 @@
+Simple installation:
+
+    make
+    make install
+
+If you have multiple versions installed, set the environment variable
+PG_CONFIG to the pg_config program that corresponds to the
+installation.  For example, in a Debian setup:
+
+    make PG_CONFIG=/usr/lib/postgresql/8.4/bin/pg_config
+    make install PG_CONFIG=/usr/lib/postgresql/8.4/bin/pg_config
+
+To run the test suite, use make installcheck.

@@ -1,0 +1,6 @@
+SET search_path = public;
+
+CREATE OR REPLACE FUNCTION vihashtext(text) RETURNS bigint
+AS 'MODULE_PATHNAME'
+STRICT IMMUTABLE
+LANGUAGE C;
