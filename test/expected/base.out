@@ -1,7 +1,7 @@
-\i vihash.sql
-SET search_path = public;
+BEGIN;
+\i sql/hash64.sql
 CREATE OR REPLACE FUNCTION hash64(text) RETURNS bigint
-AS '$libdir/vihash'
+AS 'hash64'
 STRICT IMMUTABLE
 LANGUAGE C;
 CREATE TABLE values (x text);
@@ -33,3 +33,4 @@ SELECT x, hash64(x) FROM values ORDER BY x;
  f9cad6f96effaa1b9d52c42d380d90650c584874 |  2241267823073115581
 (22 rows)
 
+ROLLBACK;

@@ -1,6 +1,4 @@
-SET search_path = public;
-
 CREATE OR REPLACE FUNCTION hash64(text) RETURNS bigint
-AS 'MODULE_PATHNAME'
+AS 'hash64'
 STRICT IMMUTABLE
 LANGUAGE C;

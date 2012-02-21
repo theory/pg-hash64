@@ -1,4 +1,5 @@
-\i vihash.sql
+BEGIN;
+\i sql/hash64.sql
 
 CREATE TABLE values (x text);
 COPY values FROM stdin;
@@ -27,3 +28,4 @@ f9cad6f96effaa1b9d52c42d380d90650c584874
 \.
 
 SELECT x, hash64(x) FROM values ORDER BY x;
+ROLLBACK;

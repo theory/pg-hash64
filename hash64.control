@@ -1,0 +1,5 @@
+# hash64 extension
+comment = 'Stable 64-bit hash function for PostgreSQL'
+default_version = '0.1.0'
+module_pathname = '$libdir/hash64'
+relocatable = true
