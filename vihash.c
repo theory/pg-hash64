@@ -12,14 +12,14 @@
 PG_MODULE_MAGIC;
 
 
-PG_FUNCTION_INFO_V1(vihashtext);
+PG_FUNCTION_INFO_V1(hash64);
 
-Datum vihashtext(PG_FUNCTION_ARGS);
-Datum vihash_any(register const unsigned char *k, register int keylen);
+Datum hash64(PG_FUNCTION_ARGS);
+Datum hash64_any(register const unsigned char *k, register int keylen);
 
 
 Datum
-vihashtext(PG_FUNCTION_ARGS)
+hash64(PG_FUNCTION_ARGS)
 {
 	text	   *key = PG_GETARG_TEXT_PP(0);
 	Datum		result;
@@ -29,7 +29,7 @@ vihashtext(PG_FUNCTION_ARGS)
 	 * it as a separate function in case we someday want to do something
 	 * different in non-C locales.	(See also hashbpchar, if so.)
 	 */
-	result = vihash_any((unsigned char *) VARDATA_ANY(key),
+	result = hash64_any((unsigned char *) VARDATA_ANY(key),
 					  VARSIZE_ANY_EXHDR(key));
 
 	/* Avoid leaking memory for toasted inputs */
@@ -148,7 +148,7 @@ vihashtext(PG_FUNCTION_ARGS)
  * If you need less than 32 bits, use a bitmask.
  */
 Datum
-vihash_any(register const unsigned char *k, register int keylen)
+hash64_any(register const unsigned char *k, register int keylen)
 {
     register uint32 a,
                 b,

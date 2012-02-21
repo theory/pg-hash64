@@ -1,13 +1,13 @@
 \i vihash.sql
 SET search_path = public;
-CREATE OR REPLACE FUNCTION vihashtext(text) RETURNS bigint
+CREATE OR REPLACE FUNCTION hash64(text) RETURNS bigint
 AS '$libdir/vihash'
 STRICT IMMUTABLE
 LANGUAGE C;
 CREATE TABLE values (x text);
 COPY values FROM stdin;
-SELECT x, vihashtext(x) FROM values ORDER BY x;
-                    x                     |      vihashtext      
+SELECT x, hash64(x) FROM values ORDER BY x;
+                    x                     |        hash64        
 ------------------------------------------+----------------------
  0daa7934b6c9652fe55bd95ba58d7b6f87bb459a |  3034666371711206838
  2315cad49156618409f050c3e00fb0c85111b512 |   388078559820946772

@@ -26,4 +26,4 @@ f7ebce0490a3e3c4748a1affe2bc31c3f4937e60
 f9cad6f96effaa1b9d52c42d380d90650c584874
 \.
 
-SELECT x, vihashtext(x) FROM values ORDER BY x;
+SELECT x, hash64(x) FROM values ORDER BY x;

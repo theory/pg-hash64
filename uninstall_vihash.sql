@@ -1,1 +1,1 @@
-DROP FUNCTION IF EXISTS vihashtext(text);
+DROP FUNCTION IF EXISTS hash64(text);
