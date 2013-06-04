@@ -5,3 +5,4 @@ tmp/
 regression.diffs
 regression.out
 sql/hash64--0*
+/hash64-*
