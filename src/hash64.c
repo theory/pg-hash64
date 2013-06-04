@@ -1,6 +1,8 @@
 /*
- * vihash
+ * hash64
  *
+ * Portions Copyright (c) 2012, David E. Wheeler
+ * Portions Copyright (c) 2012, Peter Geoghegan
  * Portions Copyright (c) 2010, Peter Eisentraut
  * Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group
  * Portions Copyright (c) 1994, Regents of the University of California
